@@ -152,6 +152,11 @@ class VideoClipper():
             base_name, _ = os.path.splitext(video_filename)
             clip_video_file = base_name + '_clip.mp4'
             audio_file = base_name + '.wav'
+
+        if video.audio is None:
+            logging.error("No audio information found.")
+            sys.exit(1)
+
         video.audio.write_audiofile(audio_file)
         wav = librosa.load(audio_file, sr=16000)[0]
         # delete the audio file after processing
