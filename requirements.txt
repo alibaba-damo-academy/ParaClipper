@@ -2,7 +2,7 @@ librosa
 soundfile
 scikit-learn>=1.3.2
 funasr>=1.1.2
-moviepy
+moviepy==1.0.3
 numpy==1.26.4
 gradio
 modelscope
